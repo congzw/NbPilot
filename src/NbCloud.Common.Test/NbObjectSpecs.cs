@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace NbCloud.Common._Specs
+namespace NbCloud.Common
 {
     [TestClass]
     public class NbObjectSpecs
@@ -9,16 +9,14 @@ namespace NbCloud.Common._Specs
         public void As_Null_Should_Return_Null()
         {
             INbObject myDemo = null;
-            var demoNbObject = myDemo.As<_DemoNbObject>();
-            Assert.IsNull(demoNbObject);
+            myDemo.As<_DemoNbObject>().ShouldNull();
         }
 
         [TestMethod]
         public void As_Instance_Should_Return_Not_Null()
         {
             INbObject myDemo = new _DemoNbObject();
-            var demoNbObject = myDemo.As<_DemoNbObject>();
-            Assert.IsNotNull(demoNbObject);
+            myDemo.As<_DemoNbObject>().ShouldNotNull();
         }
     }
     

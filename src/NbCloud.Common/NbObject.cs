@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NbCloud.Common
+﻿namespace NbCloud.Common
 {
     /// <summary>
     /// 弱类型约束接口
@@ -14,7 +8,7 @@ namespace NbCloud.Common
     }
 
     /// <summary>
-    /// 
+    /// 弱类型约束接口扩展
     /// </summary>
     public static class INbObjectExtensions
     {
