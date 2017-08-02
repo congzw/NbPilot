@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -6,6 +7,11 @@ namespace NbCloud.Common
 {
     public static class TestExtensions
     {
+        public static void ShouldThrows<T>(this Action action) where T : Exception
+        {
+            AssertHelper.ShouldThrows<T>(action);
+        }
+
         public static void ShouldNull(this object value)
         {
             Assert.IsNull(value);
@@ -18,8 +24,9 @@ namespace NbCloud.Common
 
         public static void ShouldEqual(this object value, object expectedValue)
         {
-            Debug.WriteLine("Should {0} equals {1}?", value, expectedValue);
-            Assert.AreEqual(expectedValue, value);
+            string message = string.Format("Should {0} equals {1}?", value, expectedValue);
+            Assert.AreEqual(expectedValue, value, message.WithKOPrefix());
+            AssertHelper.WriteLineOK(message);
         }
 
         public static void ShouldTrue(this bool result)
@@ -48,8 +55,54 @@ namespace NbCloud.Common
                 }
                 return;
             }
-
             Debug.WriteLine(value);
+        }
+
+
+        public static string WithOKPrefix(this string value)
+        {
+            return AssertHelper.PrefixOK(value);
+        }
+        public static string WithKOPrefix(this string value)
+        {
+            return AssertHelper.PrefixKO(value);
+        }
+    }
+
+    public class AssertHelper
+    {
+        public static readonly string OK = "✔";
+        public static readonly string KO = "✘";
+
+        public static void ShouldThrows<T>(Action action) where T : Exception
+        {
+            T expectedEx = null;
+            try
+            {
+                action.Invoke();
+            }
+            catch (Exception ex)
+            {
+                WriteLineOK("抛出了异常:" + ex.GetType());
+                expectedEx = ex as T;
+            }
+            Assert.IsNotNull(expectedEx, PrefixKO("没有发现应该抛出的异常: " + typeof(T).Name));
+        }
+        public static string PrefixOK(string value)
+        {
+            return OK + " " + value;
+        }
+        public static string PrefixKO(string value)
+        {
+            return KO + " " + value;
+        }
+        public static void WriteLineOK(string message)
+        {
+            Debug.WriteLine(PrefixOK(message));
+        }
+        public static void WriteLineKO(string message)
+        {
+            Debug.WriteLine(PrefixKO(message));
         }
     }
 }
