@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Collections\TypeListSpecs.cs" />
     <Compile Include="Extensions\CommonExtensionSpecs.cs" />
     <Compile Include="Collections\Extensions\ListExtensionsSpecs.cs" />
     <Compile Include="NbObjectSpecs.cs" />
