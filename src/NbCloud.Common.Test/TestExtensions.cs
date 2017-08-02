@@ -83,8 +83,17 @@ namespace NbCloud.Common
             }
             catch (Exception ex)
             {
-                WriteLineOK("抛出了异常:" + ex.GetType());
-                expectedEx = ex as T;
+                if (ex.InnerException != null)
+                {
+                    var baseException = ex.GetBaseException();
+                    WriteLineOK("抛出了异常:" + baseException.Message);
+                    expectedEx = baseException as T;
+                }
+                else
+                {
+                    WriteLineOK("抛出了异常:" + ex.Message);
+                    expectedEx = ex as T;
+                }
             }
             Assert.IsNotNull(expectedEx, PrefixKO("没有发现应该抛出的异常: " + typeof(T).Name));
         }
