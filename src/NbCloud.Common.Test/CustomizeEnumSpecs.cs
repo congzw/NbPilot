@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace NbCloud.Common
 {
@@ -58,8 +59,43 @@ namespace NbCloud.Common
             MyClass.Get(3).ShouldNull();
         }
 
+
+        [TestMethod]
+        public void Reset_With_Init_Should_OK()
+        {
+            MyClassWithInit.Reset();
+            MyClassWithInit.GetAll().Count.ShouldEqual(1);
+        }
+        [TestMethod]
+        public void Reset_With_Clear_Should_OK()
+        {
+            MyClassWithInit.Reset(true);
+            MyClassWithInit.GetAll().Count.ShouldEqual(0);
+        }
+
+        [TestMethod]
+        public void Reset_With_Bad_Init_Should_Exception()
+        {
+            AssertHelper.ShouldThrows<InvalidOperationException>(() => MyClassWithInitBad.GetAll().Count.ShouldEqual(0));
+        }
+
+
         public class MyClass : CustomizeEnum<MyClass>
         {
+        }
+        public class MyClassWithInit : CustomizeEnum<MyClassWithInit>
+        {
+            public MyClassWithInit()
+            {
+                addOrReplace(0, "0", "0");
+            }
+        }
+        public class MyClassWithInitBad : CustomizeEnum<MyClassWithInitBad>
+        {
+            public MyClassWithInitBad()
+            {
+                AddOrReplace(0, "0", "0");
+            }
         }
     }
 }
