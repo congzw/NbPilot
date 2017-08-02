@@ -48,6 +48,9 @@
     <Compile Include="Collections\TypeList.cs" />
     <Compile Include="Extensions\CommonExtension.cs" />
     <Compile Include="CustomizeEnum.cs" />
+    <Compile Include="IO\DirectoryHelper.cs" />
+    <Compile Include="IO\Extensions\StreamExtensions.cs" />
+    <Compile Include="IO\FileHelper.cs" />
     <Compile Include="NbException.cs" />
     <Compile Include="NbObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
