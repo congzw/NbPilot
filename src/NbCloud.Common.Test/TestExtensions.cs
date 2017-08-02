@@ -18,8 +18,9 @@ namespace NbCloud.Common
 
         public static void ShouldEqual(this object value, object expectedValue)
         {
-            Debug.WriteLine("Should {0} equals {1}?", value, expectedValue);
-            Assert.AreEqual(expectedValue, value);
+            string message = string.Format("Should {0} equals {1}?", value, expectedValue);
+            Debug.WriteLine(message);
+            Assert.AreEqual(expectedValue, value, message + " => KO!");
         }
 
         public static void ShouldTrue(this bool result)
