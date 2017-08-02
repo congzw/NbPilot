@@ -47,6 +47,7 @@
     <Compile Include="Collections\ITypeList.cs" />
     <Compile Include="Collections\TypeList.cs" />
     <Compile Include="Extensions\CommonExtension.cs" />
+    <Compile Include="CustomizeEnum.cs" />
     <Compile Include="NbException.cs" />
     <Compile Include="NbObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
