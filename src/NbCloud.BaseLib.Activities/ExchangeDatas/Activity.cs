@@ -102,9 +102,9 @@ namespace NbCloud.BaseLib.Activities.ExchangeDatas
     {
         public ActivityCategory()
         {
-            AddOrReplace(1, "TPK", "听评课");
-            AddOrReplace(2, "ZYZB", "重要直播");
-            AddOrReplace(3, "RCSK", "日常授课");
+            addOrReplace(1, "TPK", "听评课");
+            addOrReplace(2, "ZYZB", "重要直播");
+            addOrReplace(3, "RCSK", "日常授课");
         }
     }
 }
