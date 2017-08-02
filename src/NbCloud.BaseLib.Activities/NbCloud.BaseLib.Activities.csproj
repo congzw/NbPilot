@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExchangeDatas\Class1.cs" />
+    <Compile Include="ExchangeDatas\Activity.cs" />
     <Compile Include="ExchangeDatas\MyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
