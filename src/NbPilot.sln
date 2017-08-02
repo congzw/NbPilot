@@ -17,6 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NbCloud.Common", "NbCloud.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NbCloud.Common.Test", "NbCloud.Common.Test\NbCloud.Common.Test.csproj", "{BD1F4F99-F89B-4D94-8B57-383B103C8851}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{B2E30D95-E5B6-4F42-A918-CA088AF4095A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "baselib", "baselib", "{57AF5A22-D4B9-48D2-A134-E43838C29B66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3E2123A4-5DE8-49F3-8D31-20AA3A9C3580}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +48,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EF8337B6-5571-4C82-87D7-3CA90A94CC7B} = {57AF5A22-D4B9-48D2-A134-E43838C29B66}
+		{1DDFA0A4-764B-49E1-AACC-9F0205A7B95D} = {57AF5A22-D4B9-48D2-A134-E43838C29B66}
+		{C444D900-6F5D-46CA-AE75-50F7E834B146} = {B2E30D95-E5B6-4F42-A918-CA088AF4095A}
+		{BD1F4F99-F89B-4D94-8B57-383B103C8851} = {3E2123A4-5DE8-49F3-8D31-20AA3A9C3580}
 	EndGlobalSection
 EndGlobal
