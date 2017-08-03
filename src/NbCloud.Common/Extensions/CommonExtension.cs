@@ -6,6 +6,17 @@ namespace NbCloud.Common.Extensions
     public static class CommonExtension
     {
         /// <summary>
+        /// 尝试复制属性
+        /// </summary>
+        /// <param name="updatingObj"></param>
+        /// <param name="collectedObj"></param>
+        /// <param name="excludeProperties"></param>
+        public static void TryCopyPropertiesFrom(this object updatingObj, object collectedObj, string[] excludeProperties = null)
+        {
+            MyModelHelper.TryCopyProperties(updatingObj, collectedObj, excludeProperties);
+        }
+
+        /// <summary>
         /// 扩展的字符串比较
         /// </summary>
         /// <param name="value"></param>
