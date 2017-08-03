@@ -5,6 +5,34 @@ namespace NbCloud.Common.Extensions
 {
     public static class CommonExtension
     {
+        /// <summary>
+        /// 扩展的字符串比较
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="str2"></param>
+        /// <param name="stringComparison"></param>
+        /// <param name="trimSpaceBeforeCompare"></param>
+        /// <returns></returns>
+        public static bool NbEquals(this String value, string str2, StringComparison stringComparison = StringComparison.OrdinalIgnoreCase, bool trimSpaceBeforeCompare = true)
+        {
+            if (value == null)
+            {
+                return false;
+            }
+
+            if (str2 == null)
+            {
+                return false;
+            }
+
+            if (trimSpaceBeforeCompare)
+            {
+                return value.Trim().Equals(str2.Trim(), stringComparison);
+            }
+
+            return value.Equals(str2, stringComparison);
+        }
+
         public static String NameOf<T, TT>(this Expression<Func<T, TT>> accessor)
         {
             return _nameof(accessor.Body);
