@@ -5,31 +5,6 @@ using NbCloud.Common;
 
 namespace NbCloud.BaseLib.Activities.ExchangeDatas
 {
-    /// <summary>
-    /// 包含需要校验授权的操作
-    /// </summary>
-    public interface IOp
-    {
-        /// <summary>
-        /// 操作的唯一键
-        /// </summary>
-        string OpPk { get; set; }
-    }
-
-    /// <summary>
-    /// Html链接
-    /// </summary>
-    public interface IHtmlLink
-    {
-        /// <summary>
-        /// 名称
-        /// </summary>
-        string Text { get; set; }
-        /// <summary>
-        /// 链接
-        /// </summary>
-        string Href { get; set; }
-    }
 
     /// <summary>
     /// 常用操作
@@ -73,7 +48,7 @@ namespace NbCloud.BaseLib.Activities.ExchangeDatas
     /// <summary>
     /// 活动关键操作
     /// </summary>
-    public class ActivityKeyOp : IHtmlLink, IOp
+    public class ActivityKeyOp : IHasHtmlLink, IHasOpPk
     {
         /// <summary>
         /// 名称
@@ -84,6 +59,11 @@ namespace NbCloud.BaseLib.Activities.ExchangeDatas
         /// 链接
         /// </summary>
         public string Href { get; set; }
+
+        /// <summary>
+        /// 显示文本
+        /// </summary>
+        public string Title { get; set; }
 
         /// <summary>
         /// 操作的唯一键
@@ -106,5 +86,81 @@ namespace NbCloud.BaseLib.Activities.ExchangeDatas
             addOrReplace(2, "ZYZB", "重要直播");
             addOrReplace(3, "RCSK", "日常授课");
         }
+    }
+
+    /// <summary>
+    /// 包含需要校验授权的操作
+    /// </summary>
+    public interface IHasOpPk
+    {
+        /// <summary>
+        /// 操作的唯一键
+        /// </summary>
+        string OpPk { get; set; }
+    }
+
+    /// <summary>
+    /// Html链接
+    /// </summary>
+    public interface IHasHtmlLink
+    {
+        /// <summary>
+        /// 名称
+        /// </summary>
+        string Text { get; set; }
+        /// <summary>
+        /// 链接
+        /// </summary>
+        string Href { get; set; }
+        /// <summary>
+        /// 显示文本
+        /// </summary>
+        string Title { get; set; }
+    }
+
+    /// <summary>
+    /// 可用于交互的Html组件
+    /// </summary>
+    public class ExchangeableHtml : IHasHtmlLink, IHasOpPk
+    {
+        /// <summary>
+        /// 名称
+        /// </summary>
+        public string Text { get; set; }
+
+        /// <summary>
+        /// 链接
+        /// </summary>
+        public string Href { get; set; }
+
+        /// <summary>
+        /// 显示文本
+        /// </summary>
+        public string Title { get; set; }
+
+        /// <summary>
+        /// 操作的唯一键
+        /// </summary>
+        public string OpPk { get; set; }
+
+        /// <summary>
+        /// 要发送的到的容器位置，例如: Space.Home.Index
+        /// </summary>
+        public string ToPosition { get; set; }
+
+        /// <summary>
+        /// 来源，例如: App.YZB
+        /// </summary>
+        public string FromPosition { get; set; }
+
+        /// <summary>
+        /// 分类，例如: Default, null, ...
+        /// </summary>
+        public string Category { get; set; }
+
+        /// <summary>
+        /// 唯一键
+        /// </summary>
+        public string Name { get; set; }
     }
 }
