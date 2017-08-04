@@ -8,6 +8,27 @@ namespace NbCloud.Common.Extensions
     public class CommonExtensionSpecs
     {
         [TestMethod]
+        public void ToSplits_Default_Should_Auto_Trim()
+        {
+            var strings = "a, b，c, d".ToSplits();
+            strings[0].ShouldEqual("a");
+            strings[1].ShouldEqual("b");
+            strings[2].ShouldEqual("c");
+            strings[3].ShouldEqual("d");
+        }
+
+        [TestMethod]
+        public void ToSplits_Not_Trim_Should_OK()
+        {
+            var strings = "a, b，c, d".ToSplits(null, false);
+            strings[0].ShouldEqual("a");
+            strings[1].ShouldEqual(" b");
+            strings[2].ShouldEqual("c");
+            strings[3].ShouldEqual(" d");
+        }
+
+
+        [TestMethod]
         public void GetParamsNameByExtension_Should_OK()
         {
             GetParamsNameByExtension("hello").ShouldEqual("a");

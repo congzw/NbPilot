@@ -44,6 +44,27 @@ namespace NbCloud.Common.Extensions
             return value.Equals(str2, stringComparison);
         }
 
+        /// <summary>
+        /// 转换成数组
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="separator"></param>
+        /// <param name="autoTrim"></param>
+        /// <returns></returns>
+        public static string[] ToSplits(this String value, char[] separator = null, bool autoTrim = true)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return new string[]{};
+            }
+            if (separator == null)
+            {
+                separator = _separator;
+            }
+            return MyStringHelper.SplitString(value, separator, autoTrim);
+        }
+        private static readonly char[] _separator = { ',', '，', '；', ';' };
+
         public static String NameOf<T, TT>(this Expression<Func<T, TT>> accessor)
         {
             return _nameof(accessor.Body);

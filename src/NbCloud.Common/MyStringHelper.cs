@@ -213,6 +213,15 @@ namespace NbCloud.Common
         {
             return value.Split(separator);
         }
+        public static string[] SplitString(string value, char[] separator, bool autoTrim)
+        {
+            var result = value.Split(separator);
+            if (autoTrim)
+            {
+                result = result.Select(x => x.Trim()).ToArray();
+            }
+            return result;
+        }
         [Obsolete("使用string.join 代替")]
         public static string MakeSplitString(string[] value, char separator)
         {
