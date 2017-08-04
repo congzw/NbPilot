@@ -39,8 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExchangeDatas\Activity.cs" />
-    <Compile Include="ExchangeDatas\MyData.cs" />
+    <Compile Include="Activity.cs" />
+    <Compile Include="ActivityStatus.cs" />
+    <Compile Include="ActivityUser.cs" />
+    <Compile Include="ActivityUserType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
