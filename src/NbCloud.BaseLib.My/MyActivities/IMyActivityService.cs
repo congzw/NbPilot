@@ -9,7 +9,7 @@ namespace NbCloud.BaseLib.My.MyActivities
     /// <summary>
     /// 我的工作安排（活动转换服务）
     /// </summary>
-    public interface IMyActivityVoConvertService
+    public interface IMyActivityService
     {
         /// <summary>
         /// 转换成活动展示Vo
@@ -23,11 +23,11 @@ namespace NbCloud.BaseLib.My.MyActivities
     /// <summary>
     /// 我的工作安排（活动相关）
     /// </summary>
-    public class MyActivityVoConvertService : IMyActivityVoConvertService
+    public class MyActivityService : IMyActivityService
     {
-        private readonly IList<IMyActivityVoConvert> _myActivityVoConverts;
+        private readonly IList<IMyActivityProvider> _myActivityVoConverts;
 
-        public MyActivityVoConvertService(IList<IMyActivityVoConvert> myActivityVoConverts)
+        public MyActivityService(IList<IMyActivityProvider> myActivityVoConverts)
         {
             _myActivityVoConverts = myActivityVoConverts;
         }

@@ -30,17 +30,17 @@
 - 简单的跳转菜单，直接由模块提供
 
 
-## 技术实现的主要接口和模型
+## 概念模型
 
 组件视图模型提供： IWidgetVoProvider
-组件渲染服务： IWidgetRenderService
+组件视图模型服务： IWidgetVoService
 用户上下文: IWidgetUserContext
 
 其中：
 
 - 模块 -> impl IWidgetVoProvider
-- 页面布局 -> use IWidgetRenderService
-- IWidgetVoProvider, IWidgetRenderService -> use IWidgetUserContext
+- 页面布局 -> use IWidgetVoService
+- IWidgetVoProvider, IWidgetVoService -> use IWidgetUserContext
 
 ## 一些设计上的考虑因素
 

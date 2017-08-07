@@ -39,8 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyActivities\IMyActivityVoConvertService.cs" />
-    <Compile Include="MyActivities\IMyActivityVoConvert.cs" />
+    <Compile Include="MyActivities\IMyActivityService.cs" />
+    <Compile Include="MyActivities\IMyActivityProvider.cs" />
     <Compile Include="MyActivities\MyActivityVo.cs" />
     <Compile Include="MyCommonOps\IMyCommonOpService.cs" />
     <Compile Include="MyCommonOps\MyCommonOpService.cs" />
@@ -67,7 +67,7 @@
     <Folder Include="MyRewards\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="readme.md" />
+    <None Include="widget.md" />
     <None Include="space.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
