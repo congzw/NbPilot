@@ -64,6 +64,7 @@
     <Compile Include="Security\NbUser.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Security\Permissions\IPermissionProvider.cs">
       <SubType>Code</SubType>
     </Compile>
