@@ -34,7 +34,7 @@
 
 组件视图模型提供： IWidgetVoProvider
 组件视图模型服务： IWidgetVoService
-用户上下文: IWidgetUserContext
+上下文: IWidgetContext
 
 其中：
 

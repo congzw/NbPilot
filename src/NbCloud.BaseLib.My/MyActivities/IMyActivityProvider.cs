@@ -5,7 +5,7 @@ namespace NbCloud.BaseLib.My.MyActivities
     /// <summary>
     /// 活动展示Vo提供者接口
     /// </summary>
-    public interface IMyActivityProvider
+    public interface IMyActivityVoProvider
     {
         /// <summary>
         /// 转换活动类型，每种类型提供一个转换器
@@ -17,6 +17,9 @@ namespace NbCloud.BaseLib.My.MyActivities
         /// <param name="myUserInfo"></param>
         /// <param name="activity"></param>
         /// <returns></returns>
-        MyActivityVo ConvertToVo(MyUserInfo myUserInfo, Activity activity);
+        MyActivityVo GetMyActivityVo(MyUserInfo myUserInfo, Activity activity);
     }
+    
+    //统一接口命名（Not Convert）
+    //统一用户上下文
 }

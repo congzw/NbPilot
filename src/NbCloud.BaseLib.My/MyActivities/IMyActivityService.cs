@@ -12,12 +12,12 @@ namespace NbCloud.BaseLib.My.MyActivities
     public interface IMyActivityService
     {
         /// <summary>
-        /// 转换成活动展示Vo
+        /// 获取活动展示Vo
         /// </summary>
         /// <param name="myUserInfo"></param>
         /// <param name="activities"></param>
         /// <returns></returns>
-        IList<MyActivityVo> ConvertToVos(MyUserInfo myUserInfo, IList<Activity> activities);
+        IList<MyActivityVo> GetMyActivityVos(MyUserInfo myUserInfo, IList<Activity> activities);
     }
 
     /// <summary>
@@ -25,9 +25,9 @@ namespace NbCloud.BaseLib.My.MyActivities
     /// </summary>
     public class MyActivityService : IMyActivityService
     {
-        private readonly IList<IMyActivityProvider> _myActivityVoConverts;
+        private readonly IList<IMyActivityVoProvider> _myActivityVoConverts;
 
-        public MyActivityService(IList<IMyActivityProvider> myActivityVoConverts)
+        public MyActivityService(IList<IMyActivityVoProvider> myActivityVoConverts)
         {
             _myActivityVoConverts = myActivityVoConverts;
         }
@@ -38,7 +38,7 @@ namespace NbCloud.BaseLib.My.MyActivities
         /// <param name="myUserInfo"></param>
         /// <param name="activities"></param>
         /// <returns></returns>
-        public IList<MyActivityVo> ConvertToVos(MyUserInfo myUserInfo, IList<Activity> activities)
+        public IList<MyActivityVo> GetMyActivityVos(MyUserInfo myUserInfo, IList<Activity> activities)
         {
             if (_myActivityVoConverts == null)
             {
@@ -56,7 +56,7 @@ namespace NbCloud.BaseLib.My.MyActivities
                     throw new InvalidOperationException(string.Format("没有为活动类型:（{0}）找到转换提供程序", activityType));
                 }
 
-                var myActivityVo = myActivityVoConvert.ConvertToVo(myUserInfo, activity);
+                var myActivityVo = myActivityVoConvert.GetMyActivityVo(myUserInfo, activity);
                 myActivityVos.Add(myActivityVo);
             }
 
