@@ -4,7 +4,7 @@ namespace NbCloud.Common.Security
 {
     public class NbUser : INbUser
     {
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
         public string LoginName { get; set; }
 
         #region helpers
@@ -15,7 +15,7 @@ namespace NbCloud.Common.Security
             return string.IsNullOrWhiteSpace(this.LoginName);
         }
 
-        private static INbUser _empty = new NbUser() { LoginName = string.Empty, UserId = Guid.Empty };
+        private static INbUser _empty = new NbUser() { LoginName = string.Empty, UserId = string.Empty};
         public static INbUser Empty
         {
             get { return _empty; }
