@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NbCloud.Common.Security
+﻿namespace NbCloud.Common.Security.Users
 {
     public class NbUser : INbUser
     {

@@ -1,6 +1,6 @@
-﻿namespace NbCloud.Common.Security
+﻿namespace NbCloud.Common.Security.Users
 {
-    public interface INbUserProvider : IDependency
+    public interface INbUserSession : IDependency
     {
         /// <summary>
         /// 获取当前
