@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 
 namespace NbCloud.Common
 {
@@ -56,6 +57,17 @@ namespace NbCloud.Common
                 return;
             }
             Debug.WriteLine(value);
+        }
+
+        public static void LogJson(this object value)
+        {
+            if (value == null)
+            {
+                Debug.WriteLine("null");
+            }
+
+            var serializeObject = JsonConvert.SerializeObject(value);
+            Debug.WriteLine(serializeObject);
         }
 
 
