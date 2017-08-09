@@ -32,21 +32,21 @@
 
 ## 概念模型
 
-组件视图模型提供： IWidgetVoProvider
-组件视图模型服务： IWidgetVoService
-上下文: IWidgetContext
+- 组件视图模型提供： IWidgetVoProvider
+- 组件视图模型服务： IWidgetVoService
+- 上下文: IWidgetContext
 
 其中：
 
 - 模块 -> impl IWidgetVoProvider
 - 页面布局 -> use IWidgetVoService
-- IWidgetVoProvider, IWidgetVoService -> use IWidgetUserContext
+- IWidgetVoProvider, IWidgetVoService -> use IWidgetContext
 
-## 一些设计上的考虑因素
+## 技术实现方式的选择考虑因素
 
-技术方案的通用性和复杂性，例如是否需要中间库，是否需要额外的通用库支持，不能脱离产品方案的考量。
+是否需要中间库？
 - 是否需要复杂的查询逻辑？例如按模糊搜索、时间筛选、排序、分页（加载更多）等
 - 是否需要二次加工处理? 例如：数据再处理、统计汇总等
 - 是否具有数据差异性？例如：我的工作安排里，是否都是活动相关的数据？
-- 数据实时性和计算代价的考量？例如：某些状态的更新或数据的汇总，是否需要对中间结果进行缓存处理
+- 数据实时性和计算代价的考量？例如：某些状态的更新或数据的汇总，是否需要对中间结果进行缓存处理（我的常用操作？）
 - 通用性和使用理解简单的权衡？例如：数据交换是基于公共接口调用还是事件通知
