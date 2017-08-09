@@ -65,7 +65,7 @@
     <Compile Include="Security\Users\INbUser.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Security\Users\INbUserSession.cs" />
+    <Compile Include="Security\Users\INbUserService.cs" />
     <Compile Include="Security\Users\NbUser.cs">
       <SubType>Code</SubType>
     </Compile>
