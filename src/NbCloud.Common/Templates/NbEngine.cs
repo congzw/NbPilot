@@ -7,6 +7,9 @@ using RazorEngine.Templating;
 
 namespace NbCloud.Common.Templates
 {
+    /// <summary>
+    /// 模板引擎
+    /// </summary>
     public static class NbEngine
     {
         private static INbRazorEngineService _razor = new NbRazorNbRazorEngineService();
@@ -41,6 +44,9 @@ namespace NbCloud.Common.Templates
         string RenderFile(string templateFile, object model = null);
     }
 
+    /// <summary>
+    /// 模板引擎服务：Razor
+    /// </summary>
     public class NbRazorNbRazorEngineService : INbRazorEngineService
     {
         /// <summary>
