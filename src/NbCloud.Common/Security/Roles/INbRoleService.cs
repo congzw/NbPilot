@@ -5,6 +5,6 @@ namespace NbCloud.Common.Security.Roles
     public interface INbRoleService
     {
         IList<INbRole> GetAllRoles();
-        //todo
+        IList<INbRole> GetRolesForUser(string userId);
     }
 }
