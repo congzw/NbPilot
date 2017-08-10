@@ -55,4 +55,19 @@
         /// </summary>
         string Category { get; set; }
     }
+
+    public interface IDisabled
+    {
+        /// <summary>
+        /// 是否禁用
+        /// </summary>
+        bool Disabled { get; set; }
+    }
+    public interface IHidden
+    {
+        /// <summary>
+        /// 是否隐藏
+        /// </summary>
+        bool Hidden { get; set; }
+    }
 }

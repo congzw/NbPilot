@@ -39,16 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyActivities\IMyActivityService.cs" />
-    <Compile Include="MyActivities\IMyActivityProvider.cs" />
-    <Compile Include="MyActivities\MyActivityVo.cs" />
-    <Compile Include="MyCommonOps\IMyCommonOpService.cs" />
-    <Compile Include="MyCommonOps\MyCommonOpService.cs" />
-    <Compile Include="MyCommonOps\IMyCommonOpProvider.cs" />
+    <Compile Include="IMyWidget.cs" />
+    <Compile Include="IMyWidgetProvider.cs" />
+    <Compile Include="IMyWidgetProviderService.cs" />
     <Compile Include="MyCommonOps\MyCommonOp.cs" />
-    <Compile Include="MyUserInfo.cs" />
+    <Compile Include="MyCommonWorks\MyCommonWork.cs" />
+    <Compile Include="MyCommonWorks\MyCommonWorkProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties.cs" />
+    <Compile Include="IProperties.cs" />
+    <Compile Include="WidgetProviderService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NbCloud.BaseLib.Activities\NbCloud.BaseLib.Activities.csproj">
@@ -61,6 +60,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="MyActivities\" />
     <Folder Include="MyArchives\" />
     <Folder Include="MyComments\" />
     <Folder Include="MyMessages\" />
