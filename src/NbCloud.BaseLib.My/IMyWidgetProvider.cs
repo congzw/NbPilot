@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using NbCloud.Common.Security.Users;
 
 namespace NbCloud.BaseLib.My
 {
@@ -8,8 +7,8 @@ namespace NbCloud.BaseLib.My
         /// <summary>
         /// 返回我的组件
         /// </summary>
-        /// <param name="nbUser"></param>
+        /// <param name="myWidgetContext"></param>
         /// <returns></returns>
-        IList<T> SupplyMyWidgets(INbUser nbUser);
+        IList<T> SupplyMyWidgets(IMyWidgetContext myWidgetContext);
     }
 }

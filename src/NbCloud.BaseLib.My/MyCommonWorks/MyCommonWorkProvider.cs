@@ -8,12 +8,12 @@ namespace NbCloud.BaseLib.My.MyCommonWorks
         /// <summary>
         /// 返回我的组件
         /// </summary>
-        /// <param name="nbUser"></param>
+        /// <param name="myWidgetContext"></param>
         /// <returns></returns>
-        public IList<MyCommonWork> SupplyMyWidgets(INbUser nbUser)
+        public IList<MyCommonWork> SupplyMyWidgets(IMyWidgetContext myWidgetContext)
         {
             //todo 中间库集中，统一提供
-            if (nbUser == null)
+            if (myWidgetContext == null)
             {
                 return new List<MyCommonWork>();
             }

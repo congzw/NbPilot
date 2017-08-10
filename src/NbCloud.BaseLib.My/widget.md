@@ -1,4 +1,4 @@
-﻿# 组件聚合方案说明
+﻿# 我的组件聚合方案说明
 
 ## 关键概念
 
@@ -32,15 +32,15 @@
 
 ## 概念模型
 
-- 组件视图模型提供： IWidgetVoProvider
-- 组件视图模型服务： IWidgetVoService
-- 上下文: IWidgetContext
+- 组件视图模型提供： IMyWidgetProvider
+- 组件视图模型服务： IMyWidgetProviderService
+- 上下文: IMyWidgetContext
 
 其中：
 
-- 模块 -> impl IWidgetVoProvider
-- 页面布局 -> use IWidgetVoService
-- IWidgetVoProvider, IWidgetVoService -> use IWidgetContext
+- 模块 -> impl IMyWidgetProvider
+- 页面布局 -> use IMyWidgetProviderService
+- IMyWidgetProvider, IMyWidgetProviderService -> use IMyWidgetContext
 
 ## 技术实现方式的选择考虑因素
 

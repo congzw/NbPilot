@@ -8,9 +8,9 @@ namespace NbCloud.BaseLib.My
         /// <summary>
         /// 返回我的组件
         /// </summary>
-        /// <param name="nbUser"></param>
+        /// <param name="myWidgetContext"></param>
         /// <param name="position"></param>
         /// <returns></returns>
-        IList<T> GetAllMyWidgets(INbUser nbUser, string position = null);
+        IList<T> GetAllMyWidgets(IMyWidgetContext myWidgetContext, string position = null);
     }
 }

@@ -24,17 +24,17 @@ namespace NbCloud.BaseLib.My
         /// <summary>
         /// 返回我的组件
         /// </summary>
-        /// <param name="nbUser"></param>
+        /// <param name="myWidgetContext"></param>
         /// <param name="position"></param>
         /// <returns></returns>
-        public IList<TVo> GetAllMyWidgets(INbUser nbUser, string position = null)
+        public IList<TVo> GetAllMyWidgets(IMyWidgetContext myWidgetContext, string position = null)
         {
             var vos = new List<TVo>();
             var myWidgetProviders = _myWidgetProviders;
 
             foreach (var myWidgetProvider in myWidgetProviders)
             {
-                var supplyMyWidgetVos = myWidgetProvider.SupplyMyWidgets(nbUser);
+                var supplyMyWidgetVos = myWidgetProvider.SupplyMyWidgets(myWidgetContext);
                 vos.AddRange(supplyMyWidgetVos);
             }
 
